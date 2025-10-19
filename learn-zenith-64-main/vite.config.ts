@@ -5,18 +5,24 @@ import { componentTagger } from "lovable-tagger";
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
+  base: "/",
   server: {
     host: "::",
     port: 8080,
-    proxy: {
-      // Proxy any request starting with /api to your backend server
+    proxy: mode === 'development' ? {
+      // Only proxy in development
       "/api": {
         target: "http://localhost:3001",
         changeOrigin: true,
         secure: false,
-        rewrite: (path) => path.replace(/^\/api/, "/api"), // keep /api prefix (no-op, explicit)
+        rewrite: (path) => path.replace(/^\/api/, "/api"),
       },
-    },
+    } : undefined,
+  },
+  build: {
+    outDir: "dist",
+    assetsDir: "assets",
+    emptyOutDir: true,
   },
   plugins: [react(), mode === "development" && componentTagger()].filter(Boolean),
   resolve: {
