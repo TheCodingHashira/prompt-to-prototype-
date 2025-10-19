@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>LearnBoost CORS Tester</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <style>
+    :root { font-family: system-ui, -apple-system, Roboto, "Segoe UI", Arial; color: #111; }
+    body { max-width: 900px; margin: 32px auto; padding: 20px; background: #f7f9fc; border-radius: 8px; }
+    h1 { margin-top: 0; }
+    .box { background: #fff; border-radius: 8px; padding: 16px; box-shadow: 0 6px 20px rgba(20,20,40,0.06); }
+    .controls { display:flex; gap:8px; flex-wrap:wrap; margin-bottom:12px; }
+    button { padding:8px 12px; border-radius:6px; border:1px solid #ddd; background:#fff; cursor:pointer; }
+    button.primary { background:#2563eb; color:#fff; border-color: #1f4ec2; }
+    pre { white-space:pre-wrap; background:#0f1724; color:#d1fae5; padding:12px; border-radius:6px; }
+    label { display:block; margin-top:8px; font-size:0.9rem; color:#333; }
+    input[type="text"], textarea { width:100%; padding:8px; border-radius:6px; border:1px solid #e2e8f0; }
+    .row { display:flex; gap:10px; align-items:center; margin-bottom:8px; }
+    .note { font-size:0.9rem; color:#555; margin-top:8px; }
+  </style>
+</head>
+<body>
+  <div class="box">
+    <h1>LearnBoost CORS tester</h1>
+    <p class="note">Serve this file from <code>http://localhost:3000</code> (or another origin) and test requests to <code>http://localhost:3001</code>.</p>
+
+    <div class="row">
+      <label style="flex:1">
+        Backend URL
+        <input id="backend" type="text" value="http://localhost:3001/api/mock-append/users.json" />
+      </label>
+      <label style="width:160px">
+        Token (optional)
+        <input id="token" type="text" placeholder="Bearer token (optional)" />
+      </label>
+    </div>
+
+    <label>
+      JSON payload to POST
+      <textarea id="payload" rows="4">{"username":"appendUser","email":"append@example.com","password":"pw"}</textarea>
+    </label>
+
+    <div class="controls" style="margin-top:12px">
+      <button id="doPost" class="primary">Send POST (fetch)</button>
+      <button id="doOptions">Send OPTIONS (preflight sim)</button>
+      <button id="doCurlSim">Show curl-equivalent (Origin header)</button>
+      <button id="clear">Clear output</button>
+    </div>
+
+    <div style="display:flex;gap:12px;flex-wrap:wrap">
+      <div style="flex:1; min-width:320px;">
+        <h3>Result / Error</h3>
+        <pre id="result">No request yet.</pre>
+      </div>
+      <div style="flex:1; min-width:320px;">
+        <h3>Hints & What to watch</h3>
+        <div class="note">
+          <ul>
+            <li>Open DevTools → Network to inspect the request & response headers even if the request is blocked by CORS.</li>
+            <li>If the server <b>doesn't</b> return <code>Access-Control-Allow-Origin</code>, the browser will block the response and you'll see a CORS error in console.</li>
+            <li>Use the "OPTIONS" action to check how your server responds to preflight requests.</li>
+            <li>The "curl-equivalent" prints a curl command you can run to see server response headers (curl does not enforce CORS).</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <h3>Console log (browser)</h3>
+    <pre id="console" style="background:#111827;color:#d1fae5; min-height:80px;"></pre>
+  </div>
+
+  <script>
+    const $ = (id) => document.getElementById(id);
+    const backendEl = $('backend');
+    const tokenEl = $('token');
+    const payloadEl = $('payload');
+    const resultEl = $('result');
+    const consoleEl = $('console');
+
+    function log(msg) {
+      console.log(msg);
+      consoleEl.textContent += `${typeof msg === 'string' ? msg : JSON.stringify(msg, null, 2)}\n\n`;
+      consoleEl.scrollTop = consoleEl.scrollHeight;
+    }
+
+    function setResult(text) {
+      resultEl.textContent = text;
+    }
+
+    async function doPost() {
+      setResult('Sending POST ...');
+      log('Attempting fetch POST to ' + backendEl.value);
+      const url = backendEl.value;
+      const token = tokenEl.value.trim();
+      let body;
+      try { body = JSON.parse(payloadEl.value); } catch (e) { setResult('Invalid JSON payload: ' + e.message); return; }
+
+      try {
+        const headers = { 'Content-Type': 'application/json' };
+        if (token) headers['Authorization'] = token;
+
+        // Browser will automatically include Origin header (e.g., http://localhost:3000) for cross-origin requests
+        const resp = await fetch(url, {
+          method: 'POST',
+          headers,
+          body: JSON.stringify(body),
+          // mode defaults to 'cors' which is correct for cross-origin requests
+        });
+
+        // If server does not include proper CORS headers, the browser may throw and we won't reach here.
+        const text = await resp.text();
+        const out = {
+          status: resp.status,
+          ok: resp.ok,
+          headers: (() => {
+            const h = {};
+            for (const pair of resp.headers.entries()) h[pair[0]] = pair[1];
+            return h;
+          })(),
+          bodyText: text
+        };
+        setResult(JSON.stringify(out, null, 2));
+        log('Fetch POST success (response shown above).');
+      } catch (err) {
+        // CORS or network errors end up here
+        setResult('Fetch POST error: ' + err.message + '\n\nCheck DevTools Network tab for response headers.');
+        log('Fetch POST error: ' + err.message);
+      }
+    }
+
+    async function doOptions() {
+      setResult('Sending OPTIONS ...');
+      log('Attempting explicit OPTIONS to ' + backendEl.value);
+      try {
+        const headers = {
+          'Access-Control-Request-Method': 'POST',
+          'Access-Control-Request-Headers': 'Content-Type, Authorization'
+        };
+        const resp = await fetch(backendEl.value, {
+          method: 'OPTIONS',
+          headers,
+        });
+        const text = await resp.text();
+        const out = {
+          status: resp.status,
+          ok: resp.ok,
+          headers: (() => {
+            const h = {};
+            for (const pair of resp.headers.entries()) h[pair[0]] = pair[1];
+            return h;
+          })(),
+          bodyText: text
+        };
+        setResult(JSON.stringify(out, null, 2));
+        log('OPTIONS request completed; see details above.');
+      } catch (err) {
+        setResult('OPTIONS error: ' + err.message + '\n\nCheck DevTools Network tab for response headers.');
+        log('OPTIONS error: ' + err.message);
+      }
+    }
+
+    function doCurlSim() {
+      // Show curl form with Origin header set (to simulate browser request)
+      const url = backendEl.value;
+      const data = payloadEl.value.replace(/"/g, '\\"');
+      const tokenPart = tokenEl.value.trim() ? ` -H "Authorization: ${tokenEl.value.trim()}"` : '';
+      const curl = `curl -i -X POST "${url}" \\
+  -H "Content-Type: application/json" \\
+  -H "Origin: http://localhost:3000" ${tokenPart} \\
+  -d '${payloadEl.value}'`;
+      setResult(curl);
+      log('Displayed curl equivalent (run in terminal to inspect server headers).');
+    }
+
+    $('doPost').addEventListener('click', doPost);
+    $('doOptions').addEventListener('click', doOptions);
+    $('doCurlSim').addEventListener('click', doCurlSim);
+    $('clear').addEventListener('click', () => { setResult('No request yet.'); consoleEl.textContent = ''; });
+  </script>
+</body>
+</html>

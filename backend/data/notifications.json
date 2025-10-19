@@ -1,0 +1,20 @@
+{
+  "notifications": [
+    {
+      "id": "notif_001",
+      "type": "reminder",
+      "title": "Study Session in 1 hour",
+      "message": "Your 'Algorithms Review' session starts at 2:00 PM",
+      "read": false,
+      "createdAt": "2023-06-15T13:00:00Z"
+    },
+    {
+      "id": "notif_002",
+      "type": "achievement",
+      "title": "Achievement Unlocked!",
+      "message": "You've completed 10 study sessions this week",
+      "read": true,
+      "createdAt": "2023-06-14T09:30:00Z"
+    }
+  ]
+}

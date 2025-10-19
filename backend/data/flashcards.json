@@ -1,0 +1,178 @@
+{
+  "cards": [
+    {
+      "id": "card_001",
+      "question": "What is the time complexity of binary search?",
+      "answer": "O(log n)",
+      "tags": [
+        "algorithms",
+        "time-complexity"
+      ],
+      "difficulty": "medium",
+      "lastReviewed": "2025-10-19T12:28:29.666Z",
+      "nextReviewDate": "2025-10-29T12:28:29.666Z",
+      "createdAt": "2023-05-20T10:15:00Z"
+    },
+    {
+      "id": "card_002",
+      "question": "What is React?",
+      "answer": "A JavaScript library for building user interfaces",
+      "tags": [
+        "react",
+        "frontend"
+      ],
+      "difficulty": "easy",
+      "lastReviewed": "2025-10-19T12:28:32.648Z",
+      "nextReviewDate": "2025-10-29T12:28:32.648Z",
+      "createdAt": "2023-06-15T10:00:00Z"
+    },
+    {
+      "id": "card_fe91339d",
+      "question": "what is usa ",
+      "answer": "a country",
+      "tags": [],
+      "difficulty": "easy",
+      "lastReviewed": "2025-10-19T12:28:34.448Z",
+      "nextReviewDate": "2025-10-21T12:28:34.448Z",
+      "createdAt": "2025-10-18T12:37:08.261Z"
+    },
+    {
+      "id": "card_6f3bc704",
+      "question": "messi",
+      "answer": "GOAT",
+      "tags": [],
+      "difficulty": "easy",
+      "lastReviewed": "2025-10-19T12:28:37.183Z",
+      "nextReviewDate": "2025-10-21T12:28:37.183Z",
+      "createdAt": "2025-10-19T05:10:50.915Z"
+    },
+    {
+      "id": "auto_1760861504096_2666_0",
+      "question": "What is the capital of India?",
+      "answer": "New Delhi",
+      "tags": [
+        "India",
+        "Geography"
+      ],
+      "difficulty": "easy",
+      "lastReviewed": "2025-10-19T12:28:39.799Z",
+      "nextReviewDate": "2025-10-21T12:28:39.799Z",
+      "createdAt": "2025-10-19T08:11:44.096Z"
+    },
+    {
+      "id": "auto_1760861504098_8283_1",
+      "question": "Name three major religions practiced in India.",
+      "answer": "Hinduism, Islam, Sikhism",
+      "tags": [
+        "India",
+        "Religion"
+      ],
+      "difficulty": "medium",
+      "lastReviewed": null,
+      "nextReviewDate": null,
+      "createdAt": "2025-10-19T08:11:44.098Z"
+    },
+    {
+      "id": "auto_1760861504098_5086_2",
+      "question": "Describe the significance of the Indus Valley Civilization in relation to India.",
+      "answer": "It was one of the earliest known urban civilizations, flourishing in the northwestern region of the Indian subcontinent.",
+      "tags": [
+        "India",
+        "History",
+        "Indus Valley Civilization"
+      ],
+      "difficulty": "hard",
+      "lastReviewed": null,
+      "nextReviewDate": null,
+      "createdAt": "2025-10-19T08:11:44.098Z"
+    },
+    {
+      "id": "auto_1760877600021_267_0",
+      "question": "లెక్కించడం అంటే ఏమిటి?",
+      "answer": "చాక్లెట్లు లెక్కించడం లేదా బొమ్మలు ఎన్ని ఉన్నాయో తెలుసుకోవడం వంటిది.",
+      "tags": [
+        "గణితం"
+      ],
+      "difficulty": "easy",
+      "lastReviewed": null,
+      "nextReviewDate": null,
+      "createdAt": "2025-10-19T12:40:00.021Z"
+    },
+    {
+      "id": "auto_1760877600021_7824_1",
+      "question": "ఆకారాలకు కొన్ని ఉదాహరణలు ఇవ్వండి.",
+      "answer": "చతురస్రాలు, వృత్తాలు మరియు త్రిభుజాలు.",
+      "tags": [
+        "జ్యామితి"
+      ],
+      "difficulty": "easy",
+      "lastReviewed": null,
+      "nextReviewDate": null,
+      "createdAt": "2025-10-19T12:40:00.021Z"
+    },
+    {
+      "id": "auto_1760877600021_5208_2",
+      "question": "నమూనా అంటే ఏమిటి?",
+      "answer": "ఒక క్రమంలో వచ్చే విషయాలు. ఉదాహరణ: ఎరుపు, నీలం, ఎరుపు, నీలం...",
+      "tags": [
+        "గణితం",
+        "తార్కికం"
+      ],
+      "difficulty": "medium",
+      "lastReviewed": null,
+      "nextReviewDate": null,
+      "createdAt": "2025-10-19T12:40:00.021Z"
+    },
+    {
+      "id": "auto_1760877757724_3469_0",
+      "question": "ଗୋପବନ୍ଧୁ ଦାସ କାହାକୁ ସାହାଯ୍ୟ କରୁଥିଲେ?",
+      "answer": "ଗରିବ ଲୋକଙ୍କୁ",
+      "tags": [
+        "ଗୋପବନ୍ଧୁ ଦାସ",
+        "ସାହାଯ୍ୟ"
+      ],
+      "difficulty": "easy",
+      "lastReviewed": null,
+      "nextReviewDate": null,
+      "createdAt": "2025-10-19T12:42:37.724Z"
+    },
+    {
+      "id": "auto_1760877757724_3412_1",
+      "question": "ଗୋପବନ୍ଧୁ ଦାସ ପିଲାମାନଙ୍କ ପାଇଁ କ'ଣ ଖୋଲିଥିଲେ?",
+      "answer": "ସ୍କୁଲ ଓ କଲେଜ",
+      "tags": [
+        "ଗୋପବନ୍ଧୁ ଦାସ",
+        "ଶିକ୍ଷା"
+      ],
+      "difficulty": "easy",
+      "lastReviewed": null,
+      "nextReviewDate": null,
+      "createdAt": "2025-10-19T12:42:37.724Z"
+    },
+    {
+      "id": "auto_1760877757724_1320_2",
+      "question": "ଗୋପବନ୍ଧୁ ଦାସ କାହିଁକି ଲଢ଼ିବାକୁ କହୁଥିଲେ?",
+      "answer": "ଭାରତକୁ ବ୍ରିଟିଶ ସରକାରଙ୍କଠାରୁ ମୁକ୍ତ କରିବା ପାଇଁ",
+      "tags": [
+        "ଗୋପବନ୍ଧୁ ଦାସ",
+        "ସ୍ଵାଧୀନତା ସଂଗ୍ରାମ"
+      ],
+      "difficulty": "medium",
+      "lastReviewed": null,
+      "nextReviewDate": null,
+      "createdAt": "2025-10-19T12:42:37.724Z"
+    },
+    {
+      "id": "card_cc2dd1d0",
+      "question": "gravity",
+      "answer": "netween",
+      "tags": [],
+      "difficulty": "easy",
+      "lastReviewed": null,
+      "nextReviewDate": "2025-10-25T00:00:00Z",
+      "createdAt": "2025-10-19T15:17:01.960Z"
+    }
+  ],
+  "totalCards": 14,
+  "dueForReview": 0
+}

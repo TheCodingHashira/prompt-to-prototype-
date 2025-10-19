@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: prompt-to-prototype-backend
+    env: node
+    buildCommand: npm install
+    startCommand: node index.js
+    envVars:
+      - key: NODE_ENV
+        value: production
+      # Add other environment variables from your .env file here
+      # Example:
+      # - key: DATABASE_URL
+      #   value: your-database-url
+    plan: free
+    autoDeploy: true

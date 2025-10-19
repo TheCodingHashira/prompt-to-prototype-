@@ -1,0 +1,54 @@
+{
+  "currentWeek": {
+    "startDate": "2023-06-12",
+    "endDate": "2023-06-18",
+    "days": [
+      {
+        "date": "2023-06-12",
+        "studyTime": 45,
+        "completedSessions": 2,
+        "goalsAchieved": true
+      },
+      {
+        "date": "2023-06-13",
+        "studyTime": 60,
+        "completedSessions": 3,
+        "goalsAchieved": true
+      },
+      {
+        "date": "2023-06-14",
+        "studyTime": 30,
+        "completedSessions": 1,
+        "goalsAchieved": false
+      }
+    ]
+  },
+  "upcomingSessions": [
+    {
+      "id": "sess_001",
+      "title": "Algorithms Review",
+      "subject": "Computer Science",
+      "duration": 45,
+      "scheduledAt": "2023-06-16T14:00:00Z",
+      "isCompleted": false
+    },
+    {
+      "id": "sess_002",
+      "title": "React Hooks",
+      "subject": "Frontend Development",
+      "duration": 60,
+      "scheduledAt": "2023-06-17T10:00:00Z",
+      "isCompleted": false
+    },
+    {
+      "id": "sess_f12bd2f0",
+      "title": "dfafdadf",
+      "subject": "adfafadf",
+      "duration": 60,
+      "scheduledAt": "2025-10-18T12:22:00.000Z",
+      "description": "",
+      "isCompleted": false,
+      "createdAt": "2025-10-18T12:22:26.938Z"
+    }
+  ]
+}

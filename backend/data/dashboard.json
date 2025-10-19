@@ -1,0 +1,25 @@
+{
+  "weeklyProgress": 68,
+  "streakDays": 12,
+  "totalStudyTime": 4520,
+  "recentAchievements": [
+    {
+      "id": "ach_001",
+      "title": "5-Day Streak",
+      "description": "Maintained a 5-day study streak",
+      "icon": "streak",
+      "earnedAt": "2023-06-10T08:45:00Z"
+    },
+    {
+      "id": "ach_002",
+      "title": "Marathon Learner",
+      "description": "Completed 10 study sessions in a week",
+      "icon": "trophy",
+      "earnedAt": "2023-06-12T10:30:00Z"
+    }
+  ],
+  "motivationalQuote": {
+    "text": "The expert in anything was once a beginner.",
+    "author": "Helen Hayes"
+  }
+}

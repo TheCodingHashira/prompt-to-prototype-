@@ -1,0 +1,34 @@
+{
+  "users": [
+    {
+      "id": "user_123",
+      "username": "johndoe",
+      "email": "john@example.com",
+      "password": "securepassword123",
+      "avatarUrl": "https://api.dicebear.com/7.x/avataaars/svg?seed=John",
+      "streakDays": 12,
+      "totalStudyTime": 4520,
+      "joinedAt": "2023-01-15T10:30:00Z"
+    },
+    {
+      "id": "user_124",
+      "username": "alice",
+      "email": "alice@example.com",
+      "password": "mypassword",
+      "avatarUrl": "https://api.dicebear.com/7.x/avataaars/svg?seed=Alice",
+      "streakDays": 8,
+      "totalStudyTime": 3120,
+      "joinedAt": "2023-02-01T09:45:00Z"
+    },
+    {
+      "id": "user_50433eaf",
+      "username": "Anurag_Panigrahi",
+      "email": "anuragpanigrahi17@gmail.com",
+      "password": "rootroot",
+      "avatarUrl": "https://api.dicebear.com/7.x/avataaars/svg?seed=Anurag_Panigrahi",
+      "streakDays": 0,
+      "totalStudyTime": 0,
+      "joinedAt": "2025-10-19T14:09:24.726Z"
+    }
+  ]
+}

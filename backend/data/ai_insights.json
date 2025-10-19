@@ -1,0 +1,25 @@
+{
+  "message": "Your dedication is paying off. You've improved 20% this week!",
+  "insights": [
+    {
+      "metric": "Weekly Improvement",
+      "value": "20%",
+      "trend": "up"
+    },
+    {
+      "metric": "Consistency Score",
+      "value": "8.5/10",
+      "trend": "up"
+    },
+    {
+      "metric": "Focus Time",
+      "value": "12h 45m",
+      "trend": "up"
+    },
+    {
+      "metric": "Retention Rate",
+      "value": "92%",
+      "trend": "up"
+    }
+  ]
+}

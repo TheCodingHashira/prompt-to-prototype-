@@ -1,0 +1,39 @@
+{
+  "rooms": [
+    {
+      "id": "group_mgxrgd16_1183",
+      "title": "DSA",
+      "topic": "LL",
+      "description": "",
+      "host": {
+        "id": "host_mgxrgd16",
+        "username": "host",
+        "avatarUrl": "https://api.dicebear.com/7.x/avataaars/svg?seed=host"
+      },
+      "scheduledAt": "2025-10-19T13:47:04.314Z",
+      "duration": 60,
+      "maxParticipants": 8,
+      "participants": [
+        {
+          "id": "guest_mgxq7tmp_474",
+          "username": "guest_mp_474",
+          "avatarUrl": "https://api.dicebear.com/7.x/avataaars/svg?seed=guest_mp_474",
+          "joinedAt": "2025-10-19T13:47:08.080Z"
+        }
+      ],
+      "cards": [
+        {
+          "id": "card_mgxs511t_342",
+          "question": "what is LL",
+          "answer": "LINKED LIST",
+          "tags": [],
+          "difficulty": "easy",
+          "createdAt": "2025-10-19T14:06:15.185Z",
+          "lastReviewed": null,
+          "nextReviewDate": null
+        }
+      ],
+      "createdAt": "2025-10-19T13:47:04.314Z"
+    }
+  ]
+}
