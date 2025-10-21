@@ -1,4 +1,4 @@
-const API_BASE_URL = "https://learnboostback.onrender.com";
+const API_BASE_URL = "https://learnboostback.onrender.com/api";
 let authToken: string | null = localStorage.getItem("auth_token");
 
 export function setAuthToken(token: string | null) {
